@@ -1,5 +1,4 @@
 import express, {Request, Response} from 'express';
-import "dotenv/config"
 
 export interface User {
     name: string
@@ -7,7 +6,7 @@ export interface User {
 
 
 const app = express();
-const port = process.env.PORT ?? 8000
+const port = process?.env?.PORT ?? 8000
 
 app.get('/', async (req: Request, res: Response) => {
     const user: User = {
