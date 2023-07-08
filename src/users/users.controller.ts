@@ -9,7 +9,7 @@ export class UsersController {
   }
 
   index(req: Request, res: Response) {
-    return res.json({ message: 'Hello World' });
+    return res.json({ message: 'User List' });
   }
 
   store(req: Request, res: Response) {
