@@ -1,7 +1,7 @@
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 
-export class UserService {
+export class UsersService {
   index() {
     return 'This is the user service!';
   }

@@ -1,13 +1,24 @@
 import { Request, Response } from 'express';
+import { UsersService } from './users.service';
 
 export class UsersController {
+
+  constructor(
+    private readonly usersService: UsersService = new UsersService(),
+  ) {
+  }
 
   index(req: Request, res: Response) {
     return res.json({ message: 'Hello World' });
   }
 
   store(req: Request, res: Response) {
-    return res.json({ message: 'User created' });
+
+    return this.usersService.create({
+      name: 'John',
+      email: 'john@test.com',
+      password: '123',
+    });
   }
 
   show(req: Request, res: Response) {
