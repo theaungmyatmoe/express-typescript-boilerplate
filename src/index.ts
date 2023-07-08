@@ -1,21 +1,7 @@
-import express, {Request, Response} from 'express';
+import app from './app'
 
-export interface User {
-    name: string
-}
-
-
-const app = express();
-const port = process?.env?.PORT ?? 8000
-
-app.get('/', async (req: Request, res: Response) => {
-    const user: User = {
-        name: "Mg Mg"
-    }
-    return res.json(user);
-});
-
+const port = process.env.PORT || 8000;
 
 app.listen(port, () => {
-    console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
