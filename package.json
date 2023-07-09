@@ -17,7 +17,7 @@
     "node": "./dist/index.cjs"
   },
   "scripts": {
-    "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.js\"",
+    "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
     "build": "tsc",
     "start": "node dist/index.js"
   },
