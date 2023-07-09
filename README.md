@@ -31,3 +31,7 @@ pnpm build
 ```bash
 pnpm publish
 ```
+
+# Deployment
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Famm834%2Fexpress-typescript-boilerplate&project-name=express-typescript)
