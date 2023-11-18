@@ -1,4 +1,4 @@
-# base
+# for base
 FROM oven/bun:latest AS base
 
 WORKDIR /app
@@ -10,14 +10,40 @@ RUN bun install
 
 COPY . .
 
-# lint
+CMD ["bun", "run", "dev"]
 
-FROM base AS lint
+# for lint
+FROM base AS linter
 
 WORKDIR /app
 
-RUN bun lint
+RUN bun run lint
 
+# for build
+FROM linter AS builder
+
+WORKDIR /app
+
+RUN bun run build
+
+# for production
+FROM node:21-alpine AS production
+RUN npm install -g pnpm
+
+WORKDIR /app
+
+COPY package*.json .
+COPY pnpm-lock.yaml .
+
+COPY --from=builder /app/dist ./dist
+
+RUN pnpm install --production
+
+COPY --from=builder /app/dist ./dist
+
+EXPOSE 3000
+
+ENTRYPOINT ["node", "dist/index.mjs"]
 
 
 
