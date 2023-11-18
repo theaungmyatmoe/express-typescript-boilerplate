@@ -8,52 +8,52 @@ change my development workflow to speed up with  `ESbuild` which is
 the successor of **Webpack** in **2022** which change the bundler world. This project is just a demo boilerplate which
 uses `ESBuild` to speed up my workflow.
 
-# Docker
+## Docker
 
-## Development
+### Development
 
 ```bash
 docker compose up
 ``` 
 
-## Production
+### Production
 
 ```bash
 docker compose -f docker-compose.prod.yaml up
 ```
 
-# Local Development
+## Local Development
 
-## Requirements
+### Requirements
 
 - NodeJS 16+
 - Pnpm
 - Bun
 
-## Installation
+### Installation
 
 ```bash 
 pnpm install
 ```
 
-## Development
+### Development {id="development_1"}
 
 ```bash
 pnpm dev
 ```
 
-## Production
+### Production {id="production_1"}
 
 ```bash 
 pnpm build
 ```
 
-# Publish as Package
+## Publish as Package
 
 ```bash
 pnpm publish
 ```
 
-# Deployment
+## Deployment
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Famm834%2Fexpress-typescript-boilerplate&project-name=express-typescript)
