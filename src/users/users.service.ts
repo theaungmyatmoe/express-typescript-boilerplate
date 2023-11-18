@@ -3,11 +3,14 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 export class UsersService {
   index() {
-    return 'This is the user service!';
+    return { message: 'Users List' };
   }
 
   create(createUserDto: CreateUserDto) {
-    return 'User created successfully!';
+    return {
+      message: 'User created successfully!',
+      data: createUserDto,
+    };
   }
 
   show(id: number) {
@@ -15,10 +18,18 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `User ${id} updated successfully!`;
+    return {
+      message: `User ${id} updated successfully!`,
+      data: {
+        id,
+        ...updateUserDto,
+      },
+    };
   }
 
   delete(id: number) {
-    return `User ${id} deleted successfully!`;
+    return {
+      message: `User ${id} deleted successfully!`,
+    };
   }
 }

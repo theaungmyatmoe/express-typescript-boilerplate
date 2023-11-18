@@ -1,7 +1,11 @@
-import { Response, Request, NextFunction } from 'express';
+import { Response, Request } from 'express';
 import { ErrorResponseContract } from '../contracts';
 
-export function errorHandler(err: Error, req: Request, res: Response<ErrorResponseContract>, next: NextFunction) {
+export function errorHandler(
+  err: Error,
+  req: Request,
+  res: Response<ErrorResponseContract>,
+) {
   const statusCode = res.statusCode !== 200 ? res.statusCode : 500;
   res.status(statusCode);
   res.json({

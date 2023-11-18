@@ -1,50 +1,57 @@
 {
-  "name": "express-typescript-boilerplate",
-  "version": "1.0.0",
-  "description": "Express JS with Typescript Boilerplate crafted for speed up your development",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "tsup": {
-    "entry": [
-      "src/index.ts"
-    ]
-  },
-  "exports": {
-    "default": "./dist/index.js",
-    "require": "./dist/index.cjs",
-    "import": "./dist/index.js",
-    "node": "./dist/index.cjs"
-  },
-  "scripts": {
-    "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
-    "build": "tsc",
-    "start": "node dist/index.js"
-  },
-  "keywords": [],
-  "author": "Aung Myat Moe",
-  "license": "MIT",
-  "dependencies": {
-    "@types/cors": "^2.8.13",
-    "@types/dotenv": "^8.2.0",
-    "@types/helmet": "^4.0.0",
-    "@types/morgan": "^1.9.4",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.18.2",
-    "helmet": "^7.0.0",
-    "morgan": "^1.10.0"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.15",
-    "@types/node": "^18.11.18",
-    "@typescript-eslint/eslint-plugin": "^5.59.9",
-    "@typescript-eslint/parser": "^5.59.9",
-    "eslint": "^8.42.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-import-resolver-typescript": "^3.5.5",
-    "eslint-plugin-import": "^2.27.5",
-    "tsup": "^6.5.0",
-    "typescript": "^4.9.4"
-  }
+    "name": "express-typescript-boilerplate",
+    "version": "1.0.0",
+    "description": "Express JS with Typescript Boilerplate crafted for speed up your development",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "tsup": {
+        "entry": [
+            "src/index.ts"
+        ]
+    },
+    "exports": {
+        "default": "./dist/index.js",
+        "require": "./dist/index.cjs",
+        "import": "./dist/index.js",
+        "node": "./dist/index.cjs"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --ignore-unknown"
+    },
+    "scripts": {
+        "dev": "tsup src/index.ts --format esm --watch --onSuccess \"node dist/index.mjs\"",
+        "build": "tsc",
+        "start": "node dist/index.js",
+        "lint": "eslint . --ext .ts",
+        "bun:build": "bun build --target=bun src/index.ts --outfile=dist/index.js",
+        "bun:start": "bun dist/index.js"
+    },
+    "keywords": [],
+    "author": "Aung Myat Moe",
+    "license": "MIT",
+    "dependencies": {
+        "@types/cors": "^2.8.13",
+        "@types/dotenv": "^8.2.0",
+        "@types/helmet": "^4.0.0",
+        "@types/morgan": "^1.9.4",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "helmet": "^7.0.0",
+        "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+        "@types/express": "^4.17.15",
+        "@types/node": "^18.11.18",
+        "@typescript-eslint/eslint-plugin": "^5.61.0",
+        "@typescript-eslint/parser": "^5.61.0",
+        "eslint": "^8.44.0",
+        "eslint-config-airbnb-typescript": "^17.0.0",
+        "eslint-import-resolver-typescript": "^3.5.5",
+        "eslint-plugin-import": "^2.27.5",
+        "prettier": "3.1.0",
+        "tsup": "^6.5.0",
+        "typescript": "^4.9.4"
+    }
 }

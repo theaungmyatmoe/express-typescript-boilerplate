@@ -1,9 +1,8 @@
-import express, { Response, Request } from 'express';
+import express from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 import * as middlewares from './middlewares';
-
 
 const app = express();
 
