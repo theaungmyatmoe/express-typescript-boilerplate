@@ -24,6 +24,10 @@
         "@typescript-eslint/no-redeclare": 0,
         "no-unused-vars": "warn"
     },
+    "ignorePatterns": [
+        "dist/",
+        "node_modules/"
+    ],
     "settings": {
         "import/parsers": {
             "@typescript-eslint/parser": [
